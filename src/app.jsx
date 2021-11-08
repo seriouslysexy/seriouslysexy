@@ -6,14 +6,14 @@ import theme from "./theme";
 import ViewRouter from "./viewrouter";
 
 class App extends React.Component {
-  render() {
-    return (
+	render() {
+		return (
 			<ThemeProvider theme={ theme }>
 				<CssBaseline />
 				<ViewRouter />
 			</ThemeProvider>
 		)
-  }
+	}
 }
 
 export default App;
