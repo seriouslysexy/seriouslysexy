@@ -5,6 +5,8 @@ import Box from "@mui/material/Box";
 // import { makeStyles } from '@mui/styles';
 
 import ProfilePicture from "../profilePicture/ProfilePicture";
+import Introduction from "../introduction";
+import Skills from "../skills";
 
 // const useStyles = makeStyles({
 // 	outerContentContainerStyles: {
@@ -31,11 +33,12 @@ function LayoutContainer() {
 			<Box height="100%" width="80%" maxWidth="1200px" display="flex" flexDirection="row" justifyContent="center" alignItems="flex-start">
 				<Box className="leftContent">
 					<ProfilePicture />
-					<div>introduction blurb/short summary</div>
+					<div>navigation?</div>
 					<div>contact info</div>
 				</Box>
 				<Box className="rightContent">
-					<div>major header</div>
+					<Introduction />
+					<Skills />
 					<div>professional introduction</div>
 					<div>ALTR</div>
 					<div>Apartments247</div>
