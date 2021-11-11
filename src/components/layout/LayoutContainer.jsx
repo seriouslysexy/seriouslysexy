@@ -7,6 +7,7 @@ import { makeStyles } from '@mui/styles';
 import ProfilePicture from "../profilePicture/ProfilePicture";
 import Introduction from "../introduction";
 import Skills from "../skills";
+import AboutMe from "../aboutMe";
 
 const useStyles = makeStyles({
 	leftContent: {
@@ -44,8 +45,8 @@ function LayoutContainer() {
 				</Box>
 				<Box className={classes.rightContent}>
 					<Introduction />
+					<AboutMe />
 					<Skills />
-					<div>professional introduction</div>
 					<div>ALTR</div>
 					<div>Apartments247</div>
 					<div>Mastertech</div>
