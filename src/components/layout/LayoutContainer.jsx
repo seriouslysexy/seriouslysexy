@@ -6,6 +6,7 @@ import ProfilePicture from "../profilePicture/ProfilePicture";
 import Introduction from "../introduction";
 import Skills from "../skillsHorizontal";
 import AboutMe from "../aboutMe";
+import Contact from "../contact";
 
 const styles = {
 	leftContent: {
@@ -37,7 +38,7 @@ function LayoutContainer() {
 				<Box sx={styles.leftContent}>
 					<ProfilePicture />
 					<div>navigation?</div>
-					<div>contact info</div>
+					<Contact />
 				</Box>
 				<Box sx={styles.rightContent}>
 					<Introduction />
