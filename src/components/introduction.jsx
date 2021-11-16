@@ -10,7 +10,10 @@ const useStyles = makeStyles(theme => ({
 		fontSize: "6em"
 	},
 	secondaryHeader: {
-		fontSize: "2.25em"
+		fontSize: "2.25em",
+		width: "100%",
+		borderBottom: "2px solid " + theme.palette.primary.main,
+		paddingBottom: ".25em"
 	},
 	tertiaryHeader: {
 		fontSize: "1.1em"
@@ -23,7 +26,7 @@ function Introduction(props) {
 	return (<Box>
 		<Typography className={classes.primaryHeader} color="primary" variant="h1">Hi, I'm Eli.</Typography>
 		<Typography className={classes.secondaryHeader} variant="h2">Veteran full-stack engineer</Typography>
-		<Typography className={classes.tertiaryHeader} variant="h2">Expertise in complex NodeJS microservice architectures</Typography>
+		<Typography className={classes.tertiaryHeader} variant="h4">Expertise in complex NodeJS microservice architectures</Typography>
 	</Box>);
 }
 

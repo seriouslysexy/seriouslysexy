@@ -6,7 +6,7 @@ import { makeStyles } from '@mui/styles';
 
 import ProfilePicture from "../profilePicture/ProfilePicture";
 import Introduction from "../introduction";
-import Skills from "../skills";
+import Skills from "../skillsHorizontal";
 import AboutMe from "../aboutMe";
 
 const useStyles = makeStyles({
