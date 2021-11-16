@@ -1,12 +1,10 @@
 import React from "react";
 
-import { makeStyles, useTheme } from '@mui/styles';
-
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-const useStyles = makeStyles(theme => ({
+const styles = {
 	primaryHeader: {
 		fontSize: "6em"
 	},
@@ -29,10 +27,10 @@ const useStyles = makeStyles(theme => ({
 		borderBottom: "10px solid transparent",
 	},
 	leftArrow: {
-		borderRight: "10px solid " + theme.palette.primary.main
+		borderRight: (theme) => "10px solid " + theme.palette.primary.main
 	},
 	rightArrow: {
-		borderLeft: "10px solid " + theme.palette.secondary.main
+		borderLeft: (theme) => "10px solid " + theme.palette.secondary.main
 	},
 	label: {
 		position: "absolute",
@@ -43,16 +41,16 @@ const useStyles = makeStyles(theme => ({
 	},
 	leftLabel: {
 		left: "35px",
-		background: theme.palette.primary.main
+		background: (theme) => theme.palette.primary.main
 	},
 	rightLabel: {
 		right: "35px",
-		background: theme.palette.secondary.main
+		background: (theme) => theme.palette.secondary.main
 	},
 	line: {
 		flex: "1",
 		height: "4px",
-		background: `linear-gradient(to right, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`
+		background: (theme) => `linear-gradient(to right, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`
 	},
 	skills: {
 		padding: "20px 10px"
@@ -64,7 +62,7 @@ const useStyles = makeStyles(theme => ({
 		margin: "4px",
 		borderRadius: "3px"
 	}
-}));
+};
 
 const expert = ["NodeJS", "ReactJS"];
 const experienced = ["MySQL", "Git", "Docker"];
@@ -72,26 +70,29 @@ const comfortable = ["Mocha/Sinon", "AWS", "MongoDB", "RabbitMQ", "nginx", "gRPC
 const beginner = ["Golang"];
 
 function SkillsHorizontal(props) {
-	const classes = useStyles();
-	const theme = useTheme();
-
 	let skills = [...expert, ...experienced, ...comfortable, ...beginner];
 
 	return (<Box>
 		<Typography>Technical Experience</Typography>
 		<Grid container flexDirection="column">
-			<Grid className={classes.legend} item container flexDirection="row" flexWrap="nowrap" alignItems="center" justifyContent="space-between">
-				<div className={classes.arrow + " " + classes.leftArrow} />
-				<Typography className={classes.label + " " + classes.leftLabel}>Extremely Familiar</Typography>
-				<div className={classes.line}></div>
-				<Typography className={classes.label + " " + classes.rightLabel}>Hello World</Typography>
-				<div className={classes.arrow + " " + classes.rightArrow} />
+			<Grid sx={styles.legend} item container flexDirection="row" flexWrap="nowrap" alignItems="center" justifyContent="space-between">
+				<div sx={{...styles.arrow, ...styles.leftArrow}} />
+				<Typography sx={{...styles.label, ...styles.leftLabel}}>Extremely Familiar</Typography>
+				<div sx={styles.line}></div>
+				<Typography sx={{...styles.label, ...styles.rightLabel}}>Hello World</Typography>
+				<div sx={{...styles.arrow, ...styles.rightArrow}} />
 			</Grid>
-			<Grid className={classes.skills} item container flexDirection="row" flexWrap="nowrap" alignItems="center" justifyContent="space-between">
+			<Grid sx={styles.skills} item container flexDirection="row" flexWrap="nowrap" alignItems="center" justifyContent="space-between">
 				{skills.map((skill, idx) => {
 					let pct = Math.round((idx / (skills.length - 1)) * 100);
-					let color = theme.functions.getTransitionColor(theme.palette.primary.main, theme.palette.secondary.main, pct);
-					return <Typography key={"tech-skill" + idx} className={classes.skillBubble} style={{background: color}}>{skill}</Typography>
+					return <Typography
+						key={"tech-skill" + idx}
+						sx={{
+							...styles.skillBubble,
+							background: (theme) => theme.functions.getTransitionColor(theme.palette.primary.main, theme.palette.secondary.main, pct)
+						}}>
+							{skill}
+						</Typography>
 				})}
 			</Grid>
 		</Grid>

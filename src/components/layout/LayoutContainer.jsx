@@ -2,14 +2,12 @@ import React from "react";
 
 import Box from "@mui/material/Box";
 
-import { makeStyles } from '@mui/styles';
-
 import ProfilePicture from "../profilePicture/ProfilePicture";
 import Introduction from "../introduction";
 import Skills from "../skillsHorizontal";
 import AboutMe from "../aboutMe";
 
-const useStyles = makeStyles({
+const styles = {
 	leftContent: {
 		height: "100%",
 		paddingRight: "50px",
@@ -30,20 +28,18 @@ const useStyles = makeStyles({
 		height: "100%",
 		paddingLeft: "50px"
 	}
-});
+};
 
 function LayoutContainer() {
-	const classes = useStyles();
-
 	return (
 		<Box p="10vh" height="100%" width="100%" display="flex" flexDirection="row" justifyContent="center" alignItems="flex-start">
 			<Box height="100%" width="80%" maxWidth="1200px" display="flex" flexDirection="row" justifyContent="center" alignItems="flex-start">
-				<Box className={classes.leftContent}>
+				<Box sx={styles.leftContent}>
 					<ProfilePicture />
 					<div>navigation?</div>
 					<div>contact info</div>
 				</Box>
-				<Box className={classes.rightContent}>
+				<Box sx={styles.rightContent}>
 					<Introduction />
 					<AboutMe />
 					<Skills />
