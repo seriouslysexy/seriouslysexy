@@ -57,7 +57,7 @@ const styles = {
 	skillBubble: {
 		display: "inline-block",
 		fontWeight: "bold",
-		padding: "4px",
+		padding: "4px 8px",
 		margin: "4px",
 		borderRadius: "3px"
 	}
@@ -65,7 +65,7 @@ const styles = {
 
 const expert = ["NodeJS", "ReactJS"];
 const experienced = ["MySQL", "Git", "Docker"];
-const comfortable = ["Mocha/Sinon", "AWS", "MongoDB", "RabbitMQ", "nginx", "gRPC"];
+const comfortable = ["Mocha/Sinon", "AWS", "MongoDB", "Redis", "RabbitMQ", "nginx", "gRPC"];
 const beginner = ["Golang"];
 
 function SkillsHorizontal(props) {

@@ -2,7 +2,7 @@ import React from "react";
 
 import Box from "@mui/material/Box";
 
-import profilePicture from "../../static/img/profilepicture.jpg";
+import profilePicture from "../static/img/profilepicture.jpg";
 
 const styles = {
 	imgStyles: {
