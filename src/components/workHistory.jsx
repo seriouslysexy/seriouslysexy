@@ -13,9 +13,9 @@ const workHistoryArray = [
 		employer: "ALTR",
 		date: "July 2016 - Present",
 		responsibilities: [
-			"Creation and maintenance of an internal tool which has dramatically accelerated development company-wide and saved thousands of man-hours",
-			"Development and maintenance on 10+ distinct NodeJS microservices",
-			"Collaborated to rewrite and maintain a full-fledged GUI from AngularJS (v1) to ReactJS",
+			"Created and maintain an internal tool which has dramatically accelerated development company-wide and saved thousands of man-hours",
+			"Contributed to the development and maintenance of 10+ distinct NodeJS microservices",
+			"Collaborated with team members to rewrite and maintain a full-fledged GUI from AngularJS (v1) to ReactJS",
 			"Coordinated with engineering and product teams to architect and implement solutions that meet the requirements of all parties",
 			"Management of 3 MySQL database schemas including forward migration deployment guides"
 		],
@@ -25,7 +25,7 @@ const workHistoryArray = [
 		employer: "Apartments247",
 		date: "October 2012  - June 2016",
 		responsibilities: [
-			"Coordinated with creative director to create premium, extendable themes to establish community portfolios for national real estate management agencies",
+			"Coordinated with creative director to create premium, extendable themes to establish digital apartment community portfolios for national real estate management agencies",
 			"Communicated directly with clients and internal designers to produce completely custom sites for real estate management corporate sites",
 			"Created a highly-detailed, comprehensive quality control manual and trained employees and teams to enforce it",
 			"Started in IT - managed DNS, FTP servers, and media storage for 5000+ individual apartment communities"
@@ -46,7 +46,7 @@ const workHistoryArray = [
 function WorkHistory(props) {
 	return (<Box sx={styles.workHistoryContainer}>
 		{workHistoryArray.map((historyItemProps) => {
-			return <WorkHistoryItem key={"workHistoryItem_" + props.employer} {...historyItemProps} />
+			return <WorkHistoryItem key={"workHistoryItem_" + historyItemProps.employer} {...historyItemProps} />
 		})}
 	</Box>);
 }

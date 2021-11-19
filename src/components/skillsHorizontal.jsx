@@ -4,17 +4,13 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
 const styles = {
-	primaryHeader: {
-		fontSize: "6em"
-	},
-	secondaryHeader: {
-		fontSize: "2.25em"
-	},
-	tertiaryHeader: {
-		fontSize: "1.1em"
+	title: {
+		fontSize: "2em"
 	},
 	legend: {
 		width: "100%",
+		minWidth: "1050px",
+		maxWidth: "1250px",
 		position: "relative",
 		padding: "6px",
 		margin: "6px"
@@ -72,7 +68,7 @@ function SkillsHorizontal(props) {
 	let skills = [...expert, ...experienced, ...comfortable, ...beginner];
 
 	return (<Box>
-		<Typography>Technical Experience</Typography>
+		<Typography sx={styles.title} color="primary" variant="h2">Technical Experience</Typography>
 		<Box display="flex" flexDirection="column" alignItems="center" justifyContent="flex-start">
 			<Box sx={styles.legend} display="flex" flexDirection="row" flexWrap="nowrap" alignItems="center" justifyContent="space-between">
 				<Box sx={{...styles.arrow, ...styles.leftArrow}} />

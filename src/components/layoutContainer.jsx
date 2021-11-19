@@ -11,15 +11,14 @@ import WorkHistory from "./workHistory";
 
 const styles = {
 	leftContent: {
-		height: "100%",
 		paddingRight: "50px",
 		position: "relative",
 		"&::before": {
 			content: "''",
 			display: "block",
 			position: "absolute",
-			height: "200%",
-			top: "-50%",
+			height: "calc(100% + 15vh)",
+			top: "-10vh",
 			width: "100vh",
 			right: "0",
 			background: "rgba(255, 255, 255, .3)",
@@ -27,15 +26,16 @@ const styles = {
 		}
 	},
 	rightContent: {
-		height: "100%",
-		paddingLeft: "50px"
+		paddingLeft: "50px",
+		maxWidth: "1250px",
+		minWidth: "1100px"
 	}
 };
 
 function LayoutContainer() {
 	return (
-		<Box p="10vh" height="100%" width="100%" display="flex" flexDirection="row" justifyContent="center" alignItems="flex-start">
-			<Box height="100%" width="80%" maxWidth="1200px" display="flex" flexDirection="row" justifyContent="center" alignItems="flex-start">
+		<Box p="10vh 10vh 5vh" width="100%" display="flex" flexDirection="row" justifyContent="center" alignItems="flex-start">
+			<Box width="100%" display="flex" flexDirection="row" justifyContent="center" alignItems="stretch">
 				<Box sx={styles.leftContent}>
 					<ProfilePicture />
 					<div>navigation?</div>
