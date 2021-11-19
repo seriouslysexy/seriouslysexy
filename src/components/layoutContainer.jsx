@@ -46,9 +46,6 @@ function LayoutContainer() {
 					<AboutMe />
 					<Skills />
 					<WorkHistory />
-					<div>Apartments247</div>
-					<div>Mastertech</div>
-					<div>Personal projects, tinkering, childhood, etc</div>
 					<div>Footer, contact info, closing</div>
 				</Box>
 			</Box>
