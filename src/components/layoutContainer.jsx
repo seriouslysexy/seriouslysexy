@@ -7,7 +7,7 @@ import Introduction from "./introduction";
 import Skills from "./skillsHorizontal";
 import AboutMe from "./aboutMe";
 import Contact from "./contact";
-import WorkHistoryItem from "./workHistoryItem";
+import WorkHistory from "./workHistory";
 
 const styles = {
 	leftContent: {
@@ -45,7 +45,7 @@ function LayoutContainer() {
 					<Introduction />
 					<AboutMe />
 					<Skills />
-					<WorkHistoryItem />
+					<WorkHistory />
 					<div>Apartments247</div>
 					<div>Mastertech</div>
 					<div>Personal projects, tinkering, childhood, etc</div>
