@@ -6,8 +6,8 @@ import ProfilePicture from "./profilePicture";
 import Introduction from "./introduction";
 import Skills from "./skillsHorizontal";
 import AboutMe from "./aboutMe";
-import Contact from "./contact";
 import WorkHistory from "./workHistory";
+import Footer from "./footer";
 
 const styles = {
 	appContainer: {
@@ -30,7 +30,7 @@ function LayoutContainer() {
 				<AboutMe />
 				<Skills />
 				<WorkHistory />
-				<div>Footer, contact info, closing</div>
+				<Footer />
 			</Box>
 		</Box>
 	);
