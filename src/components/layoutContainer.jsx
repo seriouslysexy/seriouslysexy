@@ -15,22 +15,7 @@ const styles = {
 		padding: "10vh 10vh 5vh",
 		background: theme => theme.palette.site.background
 	},
-	leftContent: {
-		paddingRight: "50px",
-		position: "relative",
-		"&::before": {
-			content: "''",
-			display: "block",
-			position: "absolute",
-			height: "calc(100% + 15vh)",
-			top: "-10vh",
-			width: "100vh",
-			right: "0",
-			background: "rgba(255, 255, 255, .3)",
-			zIndex: "-1"
-		}
-	},
-	rightContent: {
+	content: {
 		paddingLeft: "50px",
 		maxWidth: "1250px",
 		minWidth: "1100px"
@@ -40,19 +25,12 @@ const styles = {
 function LayoutContainer() {
 	return (
 		<Box sx={styles.appContainer} display="flex" flexDirection="row" justifyContent="center" alignItems="flex-start">
-			<Box width="100%" display="flex" flexDirection="row" justifyContent="center" alignItems="stretch">
-				<Box sx={styles.leftContent}>
-					<ProfilePicture />
-					<div>navigation?</div>
-					<Contact />
-				</Box>
-				<Box sx={styles.rightContent}>
-					<Introduction />
-					<AboutMe />
-					<Skills />
-					<WorkHistory />
-					<div>Footer, contact info, closing</div>
-				</Box>
+			<Box sx={styles.content}>
+				<Introduction />
+				<AboutMe />
+				<Skills />
+				<WorkHistory />
+				<div>Footer, contact info, closing</div>
 			</Box>
 		</Box>
 	);

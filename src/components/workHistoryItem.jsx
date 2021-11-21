@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 
 const styles = {
 	workHistoryItem: {
-		marginBottom: theme => theme.spacing(3),
+		marginBottom: theme => theme.spacing(6),
 		paddingBottom: "6px",
 		borderBottom: theme => "3px solid " + theme.palette.primary.main
 	},

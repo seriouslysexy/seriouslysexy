@@ -6,7 +6,7 @@ import profilePicture from "../static/img/profilepicture.jpg";
 
 const styles = {
 	imgStyles: {
-		borderRadius: "100%",
+		borderRadius: "3px",
 		border: theme => `3px solid ${theme.palette.primary.main}`,
 		padding: "3px",
 		height: "100%",

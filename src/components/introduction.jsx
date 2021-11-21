@@ -3,26 +3,25 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
+import ProfilePicture from "./profilePicture";
+
 const styles = {
-	primaryHeader: {
-		position: "relative"
-	},
-	secondaryHeader: {
-		width: "100%"
-	},
-	tertiaryHeader: {
+	introContainer: {
 		width: "100%",
 		borderBottom: theme => "2px solid " + theme.palette.primary.main,
-		marginBottom: ".75em",
-		paddingBottom: ".75em"
+		marginBottom: theme => theme.spacing(6),
+		paddingBottom: theme => theme.spacing(3)
 	}
 };
 
 function Introduction(props) {
-	return (<Box>
-		<Typography sx={styles.primaryHeader} color="primary" variant="h1">Hi, I'm Eli.</Typography>
-		<Typography sx={styles.secondaryHeader} variant="h2">Veteran full-stack engineer</Typography>
-		<Typography sx={styles.tertiaryHeader} variant="h5">Expertise in complex NodeJS microservice architectures</Typography>
+	return (<Box sx={styles.introContainer} display="flex" flexDirection="row" alignItems="center" justifyContent="space-between">
+		<Box>
+			<Typography variant="h1" color="primary">Hi, I'm Eli.</Typography>
+			<Typography variant="h2">Veteran full-stack engineer</Typography>
+			<Typography variant="h5">Expertise in complex NodeJS microservice architectures</Typography>
+		</Box>
+		<ProfilePicture />
 	</Box>);
 }
 

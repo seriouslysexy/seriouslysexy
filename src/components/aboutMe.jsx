@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 const styles = {
 	about: {
 		fontSize: "1.1em",
-		marginBottom: theme => theme.spacing(3)
+		marginBottom: theme => theme.spacing(6)
 	}
 };
 
