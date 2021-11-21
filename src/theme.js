@@ -1,14 +1,42 @@
 import { createTheme } from '@mui/material/styles';
 import { lightBlue, pink } from '@mui/material/colors';
 
+import "@fontsource/inconsolata/300.css";
+import "@fontsource/inconsolata/500.css";
+import "@fontsource/inconsolata/700.css";
+
+import "@fontsource/open-sans/300.css";
+import "@fontsource/open-sans/500.css";
+import "@fontsource/open-sans/700.css";
+
+const baseFont = '"Open Sans", "Helvetica", "Arial", sans-serif';
+const headingFont = '"Inconsolata", "Helvetica", "Arial", sans-serif';
+
+const bgColor = "#04161e";
+const defaultMain = lightBlue[700];
+const defaultSecondary = pink[300];
+
 const theme = createTheme({
+	typography: {
+		fontFamily: baseFont,
+		h1: { fontFamily: headingFont, fontWeight: "700" },
+		h2: { fontFamily: headingFont, fontWeight: "700" },
+		h3: { fontFamily: headingFont, fontWeight: "500" },
+		h4: { fontFamily: headingFont, fontWeight: "500" },
+		h5: { fontFamily: headingFont, fontWeight: "300" },
+		h6: { fontFamily: headingFont, fontWeight: "300" },
+		body1: { fontWeight: "100" }
+	},
 	palette: {
 		mode: 'dark',
 		primary: {
-			main: lightBlue[700]
+			main: defaultMain
 		},
 		secondary: {
-			main: pink[300]
+			main: defaultSecondary
+		},
+		site: {
+			background: bgColor
 		}
 	},
 	functions: {

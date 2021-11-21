@@ -5,12 +5,10 @@ import Typography from "@mui/material/Typography";
 
 const styles = {
 	primaryHeader: {
-		position: "relative",
-		left: "-4px"
+		position: "relative"
 	},
 	secondaryHeader: {
-		width: "100%",
-		left: "-3px",
+		width: "100%"
 	},
 	tertiaryHeader: {
 		width: "100%",

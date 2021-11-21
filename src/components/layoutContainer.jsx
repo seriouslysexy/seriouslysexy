@@ -10,6 +10,11 @@ import Contact from "./contact";
 import WorkHistory from "./workHistory";
 
 const styles = {
+	appContainer: {
+		width: "100%",
+		padding: "10vh 10vh 5vh",
+		background: theme => theme.palette.site.background
+	},
 	leftContent: {
 		paddingRight: "50px",
 		position: "relative",
@@ -34,7 +39,7 @@ const styles = {
 
 function LayoutContainer() {
 	return (
-		<Box p="10vh 10vh 5vh" width="100%" display="flex" flexDirection="row" justifyContent="center" alignItems="flex-start">
+		<Box sx={styles.appContainer} display="flex" flexDirection="row" justifyContent="center" alignItems="flex-start">
 			<Box width="100%" display="flex" flexDirection="row" justifyContent="center" alignItems="stretch">
 				<Box sx={styles.leftContent}>
 					<ProfilePicture />

@@ -67,7 +67,7 @@ const beginner = ["Golang"];
 function SkillsHorizontal(props) {
 	let skills = [...expert, ...experienced, ...comfortable, ...beginner];
 
-	return (<Box>
+	return (<Box mb={theme => theme.spacing(3)}>
 		<Typography sx={styles.title} color="primary" variant="h2">Technical Experience</Typography>
 		<Box display="flex" flexDirection="column" alignItems="center" justifyContent="flex-start">
 			<Box sx={styles.legend} display="flex" flexDirection="row" flexWrap="nowrap" alignItems="center" justifyContent="space-between">

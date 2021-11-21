@@ -17,11 +17,11 @@ module.exports = {
         test: /\.jpg$/,
         exclude: /(node_modules)/,
         loader: "file-loader"
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
       }
-      // {
-      //   test: /\.css$/,
-      //   use: ["style-loader", "css-loader"]
-      // }
     ]
   },
   resolve: { extensions: ["*", ".js", ".jsx"] },
