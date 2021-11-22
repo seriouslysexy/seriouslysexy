@@ -8,15 +8,20 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.jsx?$/,
         exclude: /(node_modules)/,
         loader: "babel-loader",
         options: { presets: ["@babel/env"] }
+      },
+      {
+        test: /\.jpg$/,
+        exclude: /(node_modules)/,
+        loader: "file-loader"
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
       }
-      // {
-      //   test: /\.css$/,
-      //   use: ["style-loader", "css-loader"]
-      // }
     ]
   },
   resolve: { extensions: ["*", ".js", ".jsx"] },
