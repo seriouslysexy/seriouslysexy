@@ -5,7 +5,7 @@ import Link from "@mui/material/Link";
 
 const styles = {
 	styledLink: {
-		padding: theme => theme.spacing(1) + " " + theme.spacing(2),
+		padding: theme => theme.spacing(1, 2),
 		color: theme => theme.palette.common.white,
 		fill: theme => theme.palette.common.white,
 		transition: "color .3s ease 0s, fill .3s ease 0s",

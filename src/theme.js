@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { lightBlue, pink } from '@mui/material/colors';
 
 import "@fontsource/inconsolata/300.css";
@@ -16,7 +16,15 @@ const bgColor = "#04161e";
 const defaultMain = lightBlue[700];
 const defaultSecondary = pink[300];
 
-const theme = createTheme({
+let theme = createTheme({
+	breakpoints: {
+		values: {
+			xs: 480,
+			sm: 720,
+			md: 1100,
+			lg: 1400
+		}
+	},
 	typography: {
 		fontFamily: baseFont,
 		h1: { fontFamily: headingFont, fontWeight: "700" },
@@ -74,5 +82,7 @@ const theme = createTheme({
 		}
 	}
 });
+
+theme = responsiveFontSizes(theme);
 
 export default theme;

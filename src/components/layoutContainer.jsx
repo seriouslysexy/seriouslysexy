@@ -2,23 +2,26 @@ import React from "react";
 
 import Box from "@mui/material/Box";
 
-import ProfilePicture from "./profilePicture";
 import Introduction from "./introduction";
 import Skills from "./skillsHorizontal";
 import AboutMe from "./aboutMe";
 import WorkHistory from "./workHistory";
 import Footer from "./footer";
 
+import theme from "../theme";
+
 const styles = {
 	appContainer: {
 		width: "100%",
 		padding: "10vh 10vh 5vh",
-		background: theme => theme.palette.site.background
+		background: theme => theme.palette.site.background,
+		[theme.breakpoints.down("lg")]: {
+			padding: theme => theme.spacing(6)
+		}
 	},
 	content: {
-		paddingLeft: "50px",
 		maxWidth: "1250px",
-		minWidth: "1100px"
+		width: "100%"
 	}
 };
 
