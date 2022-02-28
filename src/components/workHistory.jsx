@@ -13,7 +13,7 @@ const workHistoryArray = [
 		employer: "ALTR",
 		date: "July 2016 - Present",
 		responsibilities: [
-			"Created and maintain an internal tool which has dramatically accelerated development company-wide and saved thousands of man-hours",
+			"Created and maintain an internal tool which has dramatically accelerated development company-wide and automated thousands of man-hours",
 			"Contributed to the development and maintenance of 10+ distinct NodeJS microservices",
 			"Collaborated with team members to rewrite and maintain a full-fledged GUI from AngularJS (v1) to ReactJS",
 			"Coordinated with engineering and product teams to architect and implement solutions that meet the requirements of all parties",

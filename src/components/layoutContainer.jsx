@@ -3,7 +3,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 
 import Introduction from "./introduction";
-import Skills from "./skillsHorizontal";
+import Skills from "./skillsVertical";
 import AboutMe from "./aboutMe";
 import WorkHistory from "./workHistory";
 import Footer from "./footer";

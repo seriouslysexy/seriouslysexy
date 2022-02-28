@@ -59,13 +59,11 @@ const styles = {
 	}
 };
 
-const expert = ["NodeJS", "ReactJS"];
-const experienced = ["MySQL", "Git", "Docker"];
-const comfortable = ["Mocha/Sinon", "AWS", "MongoDB", "Redis", "RabbitMQ", "nginx", "gRPC"];
-const beginner = ["Golang"];
-
 function SkillsHorizontal(props) {
-	let skills = [...expert, ...experienced, ...comfortable, ...beginner];
+	const expert = ["NodeJS", "ReactJS"];
+	const experienced = ["Git", "MySQL", "Docker"];
+	const comfortable = ["Protocol Buffers", "AWS", "Mocha/Sinon", "MongoDB", "RabbitMQ", "gRPC", "Redis", "nginx"];
+	let skills = [...expert, ...experienced, ...comfortable];
 
 	return (<Box mb={theme => theme.spacing(6)}>
 		<Typography sx={styles.title} color="primary" variant="h2">Technical Experience</Typography>
