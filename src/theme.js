@@ -1,20 +1,21 @@
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { lightBlue, pink } from '@mui/material/colors';
 
-import "@fontsource/inconsolata/300.css";
-import "@fontsource/inconsolata/500.css";
-import "@fontsource/inconsolata/700.css";
+import "@fontsource/arvo/400.css";
+import "@fontsource/arvo/700.css";
 
-import "@fontsource/open-sans/300.css";
-import "@fontsource/open-sans/500.css";
-import "@fontsource/open-sans/700.css";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import "@fontsource/roboto/900.css";
 
-const baseFont = '"Open Sans", "Helvetica", "Arial", sans-serif';
-const headingFont = '"Inconsolata", "Helvetica", "Arial", sans-serif';
+const baseFont = '"Roboto", "Helvetica", "Arial", sans-serif';
+const headingFont = '"Arvo", "Helvetica", "Arial", sans-serif';
 
 const bgColor = "#04161e";
 const defaultMain = lightBlue[700];
 const defaultSecondary = pink[300];
+const defaultTextColor = "#f3ecff";
 
 let theme = createTheme({
 	breakpoints: {
@@ -27,24 +28,24 @@ let theme = createTheme({
 	},
 	typography: {
 		fontFamily: baseFont,
-		h1: { fontFamily: headingFont, fontWeight: "700" },
-		h2: { fontFamily: headingFont, fontWeight: "700" },
-		h3: { fontFamily: headingFont, fontWeight: "500" },
-		h4: { fontFamily: headingFont, fontWeight: "500" },
-		h5: { fontFamily: headingFont, fontWeight: "300" },
-		h6: { fontFamily: headingFont, fontWeight: "300" },
-		body1: { fontWeight: "100" }
+		h1: { fontFamily: headingFont, fontWeight: "700", letterSpacing: "2px" },
+		h2: { fontFamily: headingFont, fontWeight: "700", letterSpacing: "2px" },
+		h3: { fontFamily: headingFont, fontWeight: "400", letterSpacing: "2px" },
+		h4: { fontFamily: headingFont, fontWeight: "400", letterSpacing: "2px" },
+		h5: { fontFamily: headingFont, fontWeight: "400", letterSpacing: "2px" },
+		h6: { fontFamily: headingFont, fontWeight: "400", letterSpacing: "2px" },
+		body1: { fontWeight: "300" }
 	},
 	palette: {
 		mode: 'dark',
+		background: {
+			default: bgColor
+		},
 		primary: {
 			main: defaultMain
 		},
 		secondary: {
 			main: defaultSecondary
-		},
-		site: {
-			background: bgColor
 		}
 	},
 	functions: {
@@ -79,6 +80,15 @@ let theme = createTheme({
 			};
 		
 			return "#" + hex(r) + hex(g) + hex(b);
+		}
+	},
+	components: {
+		MuiCssBaseline: {
+			styleOverrides: `
+				body {
+					color: ${defaultTextColor}
+				}
+			`
 		}
 	}
 });

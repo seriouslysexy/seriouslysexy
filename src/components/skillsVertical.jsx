@@ -31,6 +31,7 @@ const styles = {
 		padding: "4px 12px",
 		margin: "4px",
 		borderRadius: "3px",
+		zIndex: "5"
 	},
 	topLabel: {
 		top: "25px",
@@ -46,8 +47,8 @@ const styles = {
 		background: theme => `linear-gradient(to bottom, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`
 	},
 	exposure: {
-		// todo: specificity
-		fontSize: "1.5em"
+		fontSize: "2.7em !important",
+		margin: ".4em 0 0"
 	},
 	skills: {
 		padding: "10px"

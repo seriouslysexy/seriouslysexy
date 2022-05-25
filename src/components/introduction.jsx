@@ -28,8 +28,6 @@ const styles = {
 function Introduction(props) {
 	let useMobileLayout = useMediaQuery(theme.breakpoints.down("md"));
 
-	console.log("HI", theme.breakpoints.down("md"))
-
 	return (<Box sx={styles.introContainer} display="flex" flexDirection={ useMobileLayout ? "column" : "row"} alignItems="center" justifyContent={ useMobileLayout ? "flex-start" : "space-between"}>
 		<Box>
 			<Typography align={ useMobileLayout ? "center" : "left" } variant="h1" color="primary">Hi, I'm Eli.</Typography>

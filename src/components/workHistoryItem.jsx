@@ -38,7 +38,7 @@ function WorkHistoryItem(props) {
 			{props.responsibilities.map((resp, idx) => {
 				return (
 					<Box key={"resp_" + props.employer + "_" + idx} component="li" sx={styles.listItem}>
-						<Typography>{ resp }</Typography>
+						<Typography sx={{ fontSize: "1.3em" }}>{ resp }</Typography>
 					</Box>
 				);
 			})}
