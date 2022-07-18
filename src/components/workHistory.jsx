@@ -23,7 +23,7 @@ const workHistoryArray = [
 	{
 		position: "Frontend Developer",
 		employer: "Apartments247",
-		date: "October 2012  - June 2016",
+		date: "October 2012 - June 2016",
 		responsibilities: [
 			"Coordinated with creative director to create premium, extendable themes to establish online apartment community portfolios for national real estate management agencies",
 			"Communicated directly with clients and internal designers to produce completely custom sites for real estate management corporate sites",
@@ -34,7 +34,7 @@ const workHistoryArray = [
 	{
 		position: "PC Troubleshooting and Repair",
 		employer: "Mastertech Computers",
-		date: "April 2012  - October 2012",
+		date: "April 2012 - October 2012",
 		responsibilities: [
 			"Successfuly diagnosed and repaired software and hardware issues on a wide variety of desktop and laptop computers",
 			"Exceeded company and customer expecations by optimizing task order without compromising delivery on high-priority items",
