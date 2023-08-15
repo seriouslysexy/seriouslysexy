@@ -57,20 +57,20 @@ let theme = createTheme({
 			} else if (startColor.length > 7 || startColor.length < 5 || endColor.length > 7 || endColor.length < 5) {
 				throw "startColor and endColor must be 6 length hexcode colors (# optional)";
 			}
-		
+
 			if (startColor.startsWith("#")) {
 				startColor = startColor.substring(1);
 			}
 			if (endColor.startsWith("#")) {
 				endColor = endColor.substring(1);
 			}
-		
+
 			let ratio = pct / 100;
-		
+
 			let r = Math.ceil(parseInt(startColor.substring(0,2), 16) * (1 - ratio) + parseInt(endColor.substring(0,2), 16) * ratio);
 			let g = Math.ceil(parseInt(startColor.substring(2,4), 16) * (1 - ratio) + parseInt(endColor.substring(2,4), 16) * ratio);
 			let b = Math.ceil(parseInt(startColor.substring(4,6), 16) * (1 - ratio) + parseInt(endColor.substring(4,6), 16) * ratio);
-		
+
 			const hex = function(x) {
 				x = x.toString(16);
 				if (x.length == 1) {
@@ -78,7 +78,7 @@ let theme = createTheme({
 				}
 				return x;
 			};
-		
+
 			return "#" + hex(r) + hex(g) + hex(b);
 		}
 	},

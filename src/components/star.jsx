@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 import Box from "@mui/material/Box";
+import Fade from "@mui/material/Fade";
 
-import { pickOne, getRandomInRange } from "../lib/helpers";
+import { pickOne, getRandomInRange, sleep } from "../lib/helpers";
 
 const starData = {
 	colors: {
@@ -10,7 +11,7 @@ const starData = {
 		white: "#FFFFFF",
 		yellow: "#FFFF00",
 		orange: "#FF7F00",
-		red: "#FF0000"	
+		red: "#FF0000"
 	},
 	ranges: {
 		blueWhite: {
@@ -33,28 +34,28 @@ const starData = {
 }
 
 function Star(props) {
-	let massOptions = [.2, 1, 10];
 	let minStartingSize = 175;
 	let maxStartingSize = 280;
 	let tempRanges = Object.keys(starData.ranges);
 	let selectedTempRangeName = pickOne(tempRanges);
 	let tempRange = starData.ranges[selectedTempRangeName]
 
-	let startingMass = pickOne(massOptions);
 	let startingTemp = getRandomInRange(tempRange.min, tempRange.max);
 	let startingSize = getRandomInRange(minStartingSize, maxStartingSize);
 
-	const [mass, setMass] = useState(startingMass);
-	const [size, setSize] = useState(startingSize);
+	const [visible, setVisible] = useState(false);
+	const [size, setSize] = useState(startingSize * .9);
 	const [temp, setTemp] = useState(startingTemp);
-	const [transitionStyles, setTransitionStyles] = useState({});
+	const [opacity, setOpacity] = useState(0);
 	const [transitionSpeed, setTransitionSpeed] = useState("1");
 
 	useEffect(() => {
-		if (props.shouldExit) {
-			exitMainSequence();	
+		if (!visible && props.in) {
+			formStar();
+		} else if (visible && !props.in) {
+			explodeStar();
 		}
-	}, [props.shouldExit]);
+	}, [props.in]);
 
 	const convertTempToColor = gradientFunc => {
 		// blue <-> white <-> yellow <-> orange <-> red 
@@ -96,48 +97,38 @@ function Star(props) {
 		return gradientFunc(startColor, endColor, pct);
 	}
 
-	const exitMainSequence = async () => {
-		if (mass <= .23) {
-			await transitionToWhiteDwarf();
-		} else if (mass > 8) {
-			await transitionToRedSupergiant();
-			await transitionToSupernova();
-		} else {
-			await transitionToRedGiant();
-			await transitionToWhiteDwarf();
-		}
+	const formStar = () => {
+		console.log("Star calling formStar");
+		setSize(startingSize);
+		setVisible(true);
+		setOpacity(1);
+	}
 
-		props.setFadePlanets(true);
+	const explodeStar = async () => {
+		console.log("Star calling explodeStar");
+		await transitionToRedGiant();
+		console.log("Star calling transitionToRedGiant");
+		await transitionToNova();
+		console.log("Star calling transitionToNova");
+		setVisible(false);
+
 		return;
 	}
 
-	const transitionToWhiteDwarf = async () => {
-		console.log("transitionToWhiteDwarf called");
-		setTransitionSpeed("4");
-		setSize(20);
-		setTemp(starData.ranges.blueWhite.min);
-	}
-
 	const transitionToRedGiant = async () => {
-		console.log("transitionToRedGiant called");
-		setTransitionSpeed("2");
+		setTransitionSpeed("1.5");
 		setSize(400);
 		setTemp(starData.ranges.orangeRed.min);
-		await new Promise(resolve => setTimeout(resolve, 2000));
+		await sleep(1500);
 	}
 
-	const transitionToRedSupergiant = async () => {
-		console.log("transitionToRedSupergiant called");
-		setTransitionSpeed("2");
-		setSize(650);
-		setTemp(starData.ranges.orangeRed.min);
-		await new Promise(resolve => setTimeout(resolve, 2000));
-	}
-
-	const transitionToSupernova = async () => {
-		console.log("transitionToSupernova called");
-		setSize(1250);
+	const transitionToNova = async () => {
+		setTransitionSpeed("1");
+		setSize(500);
+		setOpacity(0);
 		setTemp(starData.ranges.blueWhite.min);
+		await sleep(1000);
+		setSize(125);
 	}
 
 	var baseStarStyles = {
@@ -149,14 +140,22 @@ function Star(props) {
 		margin: "auto",
 		zIndex: 5000,
 		borderRadius: "100%",
-		transition: `background ${transitionSpeed}s linear 0s, height ${transitionSpeed}s linear 0s, width ${transitionSpeed}s linear 0s`,
+		transition: `
+			background ${transitionSpeed}s linear 0s,
+			height ${transitionSpeed}s linear 0s,
+			width ${transitionSpeed}s linear 0s,
+			opacity ${transitionSpeed}s linear 0s
+		`,
 		background: theme => convertTempToColor(theme.functions.getTransitionColor),
 		height: size + "px",
-		width: size + "px"
+		width: size + "px",
+		opacity: opacity
 	}
 
 	return (
-		<Box sx={{ ...baseStarStyles, ...transitionStyles }}></Box>
+		<Fade in={props.in} appear={true} transition={baseStarStyles.transition} sx={{ ...baseStarStyles }}>
+			<Box></Box>
+		</Fade>
 	);
 }
 
