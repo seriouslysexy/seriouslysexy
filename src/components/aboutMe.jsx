@@ -14,9 +14,10 @@ function AboutMe(props) {
 	return (<Box>
 		<Typography sx={{ fontSize: "2em" }} color="primary" variant="h2">About Me</Typography>
 		<Typography sx ={styles.about}>
-			I'm a software engineer currently based in central Florida. I love learning and solving technical problems.
-			My current focus is development and maintenance of many of our server-side applications at ALTR.
-			I thrive in fast-paced environments where I am able to adapt and think creatively to produce high-quality software solutions.
+			I have a cumulative 11 years of experience with frontend and backend Javascript development.
+			I'm most familiar with NodeJS, React, and the affiliated ecosystem of databases, communication, and build/deployment tools.
+			I love learning and solving technical problems. Most of my time has been spent with working to bring structure to small teams in rapidly shifting markets.
+			I am looking for opportunities to solve complicated, delicate, or otherwise nuanced opportunities in NodeJS or React environments, or to bring my experience to a younger team.
 		</Typography>
 	</Box>);
 }

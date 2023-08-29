@@ -2,10 +2,10 @@ import React from "react";
 
 import Box from "@mui/material/Box";
 
-import Navigation from "./navigation";
 import Introduction from "./introduction";
-import Skills from "./skillsVertical";
 import AboutMe from "./aboutMe";
+import Skills from "./skills";
+import HireMe from "./hireMe";
 import WorkHistory from "./workHistory";
 import Footer from "./footer";
 
@@ -28,11 +28,11 @@ const styles = {
 function LayoutContainer() {
 	return (
 		<Box sx={styles.appContainer} display="flex" flexDirection="row" justifyContent="center" alignItems="flex-start">
-			<Navigation />
 			<Box sx={styles.content}>
 				<Introduction />
 				<AboutMe />
 				<Skills />
+				<HireMe />
 				<WorkHistory />
 				<Footer />
 			</Box>

@@ -22,6 +22,7 @@ let theme = createTheme({
 		values: {
 			xs: 480,
 			sm: 720,
+			logo: 800,
 			md: 1100,
 			lg: 1400
 		}

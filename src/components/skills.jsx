@@ -3,6 +3,8 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
+import theme from "../theme";
+
 const styles = {
 	title: {
 		fontSize: "2em"
@@ -11,7 +13,10 @@ const styles = {
 		minWidth: "200px",
 		position: "relative",
 		padding: "6px",
-		margin: "6px"
+		margin: "6px",
+		[theme.breakpoints.down("sm")]: {
+			display: "none"
+		}
 	},
 	arrow: {
 		width: "0",
@@ -62,19 +67,19 @@ const styles = {
 	}
 };
 
-function SkillsHorizontal(props) {
+function Skills(props) {
 	const skills = {
 		expert: {
-			exposure: "4-5+ years",
-			subjects: ["NodeJS", "ReactJS", "Git", "MySQL", "Docker"]
+			exposure: "5+ years",
+			subjects: ["NodeJS", "React", "Git", "MySQL", "Docker"]
 		},
 		experienced: {
-			exposure: "2-4 years",
-			subjects: ["Protocol Buffers", "AWS", "MongoDB", "RabbitMQ", "Redis"]
+			exposure: "3-5 years",
+			subjects: ["SAML", "Protocol Buffers", "AWS", "MongoDB", "RabbitMQ"]
 		},
 		comfortable: {
-			exposure: "0-2 years",
-			subjects: ["Mocha/Sinon", "gRPC", "nginx", "golang"]
+			exposure: "<3 years",
+			subjects: ["Redis", "Mocha/Sinon", "gRPC", "nginx", "golang"]
 		}
 	};
 
@@ -114,4 +119,4 @@ function SkillsHorizontal(props) {
 	</Box>);
 }
 
-export default SkillsHorizontal;
+export default Skills;

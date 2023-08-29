@@ -14,9 +14,9 @@ module.exports = {
         options: { presets: ["@babel/env"] }
       },
       {
-        test: /\.jpg$/,
+        test: /\.(jpg|json)$/,
         exclude: /(node_modules)/,
-        loader: "file-loader"
+        type: "asset/resource"
       },
       {
         test: /\.css$/,
