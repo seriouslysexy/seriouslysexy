@@ -1,5 +1,5 @@
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
-import { lightBlue, pink } from '@mui/material/colors';
+import { green, amber } from '@mui/material/colors';
 
 import "@fontsource/arvo/400.css";
 import "@fontsource/arvo/700.css";
@@ -12,9 +12,9 @@ import "@fontsource/roboto/900.css";
 const baseFont = '"Roboto", "Helvetica", "Arial", sans-serif';
 const headingFont = '"Arvo", "Helvetica", "Arial", sans-serif';
 
-const bgColor = "#04161e";
-const defaultMain = lightBlue[700];
-const defaultSecondary = pink[300];
+const bgColor = "#181401";
+const defaultMain = green[800];
+const defaultSecondary = amber[500];
 const defaultTextColor = "#f3ecff";
 
 let theme = createTheme({

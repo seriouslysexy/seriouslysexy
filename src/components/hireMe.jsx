@@ -7,7 +7,7 @@ import Contact from "./contact";
 
 const styles = {
 	hireMeWrapper: {
-		background: "rgba(200, 40, 100, .1)",
+		background: theme => `${theme.palette.secondary.main}0f`,
 		padding: ".5em",
 		marginBottom: theme => theme.spacing(7),
 		marginTop: theme => theme.spacing(5)
