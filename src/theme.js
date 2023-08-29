@@ -14,7 +14,7 @@ const headingFont = '"Arvo", "Helvetica", "Arial", sans-serif';
 
 const bgColor = "#181401";
 const defaultMain = green[800];
-const defaultSecondary = amber[500];
+const defaultSecondary = amber[600];
 const defaultTextColor = "#f3ecff";
 
 let theme = createTheme({
