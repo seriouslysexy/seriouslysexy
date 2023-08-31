@@ -2,9 +2,9 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = {
+module.exports = (env, argv) => ({
   entry: "./src/index.js",
-  mode: "development",
+  mode: argv.mode || "development",
   module: {
     rules: [
       {
@@ -41,8 +41,9 @@ module.exports = {
   plugins: [
 		new webpack.HotModuleReplacementPlugin(),
 		new HtmlWebpackPlugin({
-			template: "src/index.ejs",
-			filename: "index.html"
+			template: "src/index.ejs", // these are default values
+      filename: "index.html", // these are default values
+      templateParameters: { env, argv } // passing in everything from the command-line
 		})
 	]
-};
+});
