@@ -2,16 +2,35 @@
 
 <html>
 	<head>
+		<% if(argv.mode === "production") { %>
+			<!-- This template receives env and arvg values from Webpack, we only want Google Analytics in Prod mode -->
+			<!-- Google tag (gtag.js) -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FENXZNG5G"></script>
+			<script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+
+				gtag('config', 'G-3FENXZNG5G');
+			</script>
+		<% } %>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="I am Elijah Greene and this is my personal website and digital software development resume.">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<title>seriously.sexy</title>
 		<style>
+			html { background: #181401 }
 			html, body, #root {
 				display: block;
 				position: relative;
-				height: 100%;
-				width: 100%;
+				min-height: 100%;
+				min-width: 100%;
 				overflow-x: hidden;
+			}
+			* {
+				position: relative;
 			}
 		</style>
 		<!-- jss-insertion-point -->
@@ -20,6 +39,5 @@
 	<body>
 		<div id="root"></div>
 		<noscript>You need to enable JavaScript to view this site.</noscript>
-		<script src="../dist/bundle.js"></script>
 	</body>
 </html>

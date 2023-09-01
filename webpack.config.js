@@ -1,22 +1,23 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-module.exports = {
+module.exports = (env, argv) => ({
   entry: "./src/index.js",
-  mode: "development",
+  mode: argv.mode || "development",
   module: {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /(node_modules)/,
+        exclude: /node_modules/,
         loader: "babel-loader",
         options: { presets: ["@babel/env"] }
       },
       {
-        test: /\.jpg$/,
-        exclude: /(node_modules)/,
-        loader: "file-loader"
+        test: /\.(jpg|json)$/,
+        exclude: /node_modules/,
+        type: "asset/resource"
       },
       {
         test: /\.css$/,
@@ -41,8 +42,15 @@ module.exports = {
   plugins: [
 		new webpack.HotModuleReplacementPlugin(),
 		new HtmlWebpackPlugin({
-			template: "src/index.ejs",
-			filename: "index.html"
-		})
+			template: "src/index.ejs", // these are default values
+      filename: "index.html", // these are default values
+      templateParameters: { env, argv } // passing in everything from the command-line
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "src/static/img/favicon-*", to: "[name].[ext]" },
+        { from: "src/robots.txt", to: "[name][ext]" }
+      ]
+    })
 	]
-};
+});

@@ -5,15 +5,13 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from "./theme";
 import ViewRouter from "./viewrouter";
 
-class App extends React.Component {
-	render() {
-		return (
-			<ThemeProvider theme={ theme }>
-				<CssBaseline />
-				<ViewRouter />
-			</ThemeProvider>
-		)
-	}
+function App(props) {
+	return (
+		<ThemeProvider theme={ theme }>
+			<CssBaseline />
+			<ViewRouter />
+		</ThemeProvider>
+	)
 }
 
 export default App;
