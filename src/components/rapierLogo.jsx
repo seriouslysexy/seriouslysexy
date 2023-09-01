@@ -164,7 +164,7 @@ function Scene() {
 
 				<RoundedBox args={[8, .1, 1.2]} position={[-.3, 0, 0]} castShadow receiveShadow>
 					<CuboidCollider args={[4, .05, .6]} position={[0, 0, 0]} />
-					<meshStandardMaterial color={theme.functions.pSBC(-0.1, theme.palette.background.default)} />
+					<meshStandardMaterial color={theme.functions.pSBC(-0.96, theme.palette.secondary.main)} />
 				</RoundedBox>
 			</Physics>
 			<ambientLight intensity={.5} />
