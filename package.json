@@ -13,8 +13,8 @@
   "dependencies": {
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
-    "@fontsource/arvo": "^4.5.5",
-    "@fontsource/roboto": "^4.5.7",
+    "@fontsource/arvo": "^5.0.11",
+    "@fontsource/roboto": "5.0.8",
     "@mui/material": "^5.0.6",
     "@react-three/drei": "^9.80.8",
     "@react-three/fiber": "^8.13.6",
@@ -22,8 +22,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.0.1",
-    "three": "^0.155.0",
-    "uuid": "^8.3.2"
+    "three": "^0.155.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -32,7 +31,6 @@
     "babel-loader": "^8.2.3",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.5.1",
-    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.62.1",
