@@ -9,27 +9,41 @@ const styles = {
 
 const workHistoryArray = [
 	{
+		position: "SWE III -> Senior Software Engineer",
+		employer: "FloQast",
+		date: "February 2024 - Current",
+		responsibilities: [
+			"Planned and lead the development of the first Compliance BU external API, achieving feature parity with the internal API while significantly improving performance and unlocking new integrations",
+			"Guided the implementation for internationalization in the Compliance BU, introducing patterns for supporting consistent translations and behavior across disparate UIs and APIs",
+			"Participated in interviews and hiring committee calls and provided mentorship to junior engineers to ensure consistent performance and rapid growth",
+			"Completed vendor comparisons to ensure the functional needs of the entire organization are met"
+		],
+	},
+	{
 		position: "Full-Stack Software Engineer",
 		employer: "ALTR",
 		date: "July 2016 - July 2023",
 		responsibilities: [
-			"Independently planned and implemented major revisions to a proprietary authentication system to facilitate SSO compatibility (SAML2.0)",
-			"Created and maintained an internal tool which dramatically accelerated development company-wide and automated thousands of man-hours of labor",
-			"Contributed to the development and maintenance of 10+ distinct NodeJS microservices",
-			"Collaborated with team members, product managers, and executive stakeholders to plan and deliver a complete rewrite of a full-fledged GUI from AngularJS (v1) to React",
-			"Regularly coordinated with engineering and product teams to architect and implement solutions that meet the requirements of all parties and meet delivery dates",
-			"Managed three MySQL database schemas including forward migration deployment guides"
+			"Automated thousands of labor hours and dramatically improved integration testing experience by independently creating an internal developer tool supported by Terraform",
+			"Enabled the 2nd largest deal in company history by reworking a proprietary authentication system to become SAML2.0 compliant, supporting SSO and SCIM through Okta and Azure Active Directory",
+			"Ended a code freeze and provided a reliable foundation for future UI development by conducting a GUI rewrite from end-of-life AngularJS v1 to React without disrupting end-user experience",
+			"Renovated and fully documented Protocol Buffer interface classes that are used by more than half of ALTR microservices",
+			"Reduced write rejections of Mongo objects with nebulous content to zero by updating Mongoose schemas to be durable, flexible, and extensible",
+			"Maximized value in planning stages by recommending priority for the highest impact features that required the least effort and identifying less important items that required more resources",
+			"Avoided functional duplication and preserved separation of concerns in a microservice architecture by ensuring that applications were lean, legible, and single-purpose",
+			"Mitigated manual MariaDB schema update errors entirely by automating forward and backward migrations and writing step-by-step manual migration guides",
+			"Maintained alignment on product expectations, delivery dates, and team capacity by clearly and effectively communicated technical details to non-technical executive, design, and product teams"
 		],
 	},
 	{
-		position: "Frontend Developer",
+		position: "IT Tech -> Frontend Developer",
 		employer: "Apartments247",
 		date: "October 2012 - June 2016",
 		responsibilities: [
-			"Coordinated with creative director to create premium, extendable templates to establish online apartment community portfolios for national real estate management agencies",
-			"Communicated directly with clients and internal designers to build fully responsive, custom sites that match mockups on all devices and screen sizes",
-			"Created a highly-detailed, comprehensive quality control manual and trained employees and teams to enforce it",
-			"Started in IT - managed DNS, FTP servers, and media storage for 5000+ individual apartment communities"
+			"Pushed for early adoption of new standards like flexbox, responsive design, SCSS mixins, and SVGs",
+			"Decreased customer support calls by half by creating a comprehensive quality control manual for standardized delivery expectations and training employees on how to apply it",
+			"Reliably produced responsive, high-performance templates that perfectly matched mockups across all target devices and screen dimensions without compromising technical optimization",
+			"Coordinated directly with highest-profile executive clients to produce completely custom layouts for their corporate-level web presence"
 		],
 	},
 	{

@@ -3,6 +3,8 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
+import theme from "../theme";
+
 const styles = {
 	workHistoryItem: {
 		marginBottom: theme => theme.spacing(6),
@@ -18,7 +20,10 @@ const styles = {
 		fontSize: "2em"
 	},
 	subtitle: {
-		fontSize: "1.1em"
+		marginTop: ".3em",
+		[theme.breakpoints.up("lg")]: {
+			fontSize: "2.7em"
+		},
 	},
 	listItems: {
 		margin: "0",

@@ -71,11 +71,11 @@ function Skills(props) {
 	const skills = {
 		expert: {
 			exposure: "5+ years",
-			subjects: ["NodeJS", "React", "Git", "MySQL", "Docker"]
+			subjects: ["NodeJS", "React", "Git", "MongoDB", "MySQL", "Docker"]
 		},
 		experienced: {
 			exposure: "3-5 years",
-			subjects: ["SAML", "Protocol Buffers", "AWS", "MongoDB", "RabbitMQ"]
+			subjects: ["AWS", "Jest", "SAML", "Protocol Buffers", "RabbitMQ"]
 		},
 		comfortable: {
 			exposure: "<3 years",
